@@ -29,4 +29,10 @@ public class FraudController {
     public Errors checkOrder(@RequestBody Order order) {
         return fraudService.check(order);
     }
+    
+    @ApiOperation("Order fraud check")
+    @RequestMapping(value = "/order1", method = {RequestMethod.POST}, consumes = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    public Errors checkOrder1(@RequestBody Order order) {
+        return fraudService.check(order);
+    }
 }
