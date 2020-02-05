@@ -1,5 +1,7 @@
 package com.oudmaijer.drools.fraud;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.oudmaijer.drools.config.DroolsConfig;
 import com.oudmaijer.drools.fraud.rules.Address;
 import com.oudmaijer.drools.fraud.rules.Errors;
@@ -40,4 +42,10 @@ public class FraudServiceTest {
         stopWatch.stop();
         log.info("Validation of {} took: " + stopWatch.getTotalTimeMillis() + "ms");
     }
+    
+    @Test
+	public void test1() throws Exception {
+		ObjectMapper mapper = new ObjectMapper();
+		System.out.println(mapper.writeValueAsString(new Order("1", new Seller(3), new Address("3452RK", 53))));
+	}
 }
