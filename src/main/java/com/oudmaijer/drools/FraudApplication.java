@@ -17,7 +17,7 @@ public class FraudApplication extends SpringBootServletInitializer {
 
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-    	System.out.println("");
+    	System.out.println("Sample");
         return application.sources(FraudApplication.class);
     }
 
